@@ -8,7 +8,11 @@ public class MainApp {
  
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		HelloWorld obj = (HelloWorld) context.getBean("helloworld");
+		System.out.println(obj);//自动把对象转成String，从而会调用类里面的toString方法。虽然有点扯,但是这样解释应该还算完美。
+		obj.setMessage("Today is sunny");
+		System.out.println(obj.getMessage());
 		System.out.println(obj);
+		System.out.println(obj.toString());
 	}
  
 }
